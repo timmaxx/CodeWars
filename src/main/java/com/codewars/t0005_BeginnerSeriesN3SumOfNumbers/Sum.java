@@ -19,9 +19,7 @@ Your function should only return a number, not the explanation about how you get
 
 public class Sum
 {
-    public int GetSum(int a, int b)
-    {
-        //Good luck!
-        return 0;
+    public int GetSum(int a, int b) {
+        return (a + b) * ( Math.abs(a - b) + 1) / 2;
     }
 }
