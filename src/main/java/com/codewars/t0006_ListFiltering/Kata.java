@@ -1,5 +1,6 @@
 package com.codewars.t0006_ListFiltering;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // 7 kyu
@@ -16,7 +17,12 @@ Kata.filterList(List.of(1, 2, "a", "b", "aasf", "1", "123", 231)) => List.of(1, 
 public class Kata {
 
     public static List<Object> filterList(final List<Object> list) {
-        // Return the List with the Strings filtered out
-        return null;
+        List<Object> resultList = new ArrayList<>();
+        for ( Object obj: list) {
+            if (obj instanceof Integer) {
+                resultList.add(obj);
+            }
+        }
+        return resultList;
     }
 }
