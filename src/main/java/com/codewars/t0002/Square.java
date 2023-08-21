@@ -24,6 +24,12 @@ Examples
 
 public class Square {
     public static boolean isSquare(int n) {
-        return true;
+        if ( n < 0) {
+            return false;
+        }
+
+        int sqrtFromN = (int) ( Math.sqrt( n));
+
+        return sqrtFromN * sqrtFromN == n;
     }
 }
