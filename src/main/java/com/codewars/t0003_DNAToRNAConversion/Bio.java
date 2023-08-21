@@ -1,5 +1,6 @@
 package com.codewars.t0003_DNAToRNAConversion;
 
+// 8 kyu
 /*
 Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
 
@@ -15,6 +16,6 @@ The input string can be of arbitrary length - in particular, it may be empty. Al
 
 public class Bio {
     public String dnaToRna(String dna) {
-        return dna;  // Do your magic!
+        return dna.replace('T','U');
     }
 }
