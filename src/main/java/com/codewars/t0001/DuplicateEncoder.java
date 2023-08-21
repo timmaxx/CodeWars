@@ -1,5 +1,8 @@
 package com.codewars.t0001;
 
+import java.util.HashMap;
+import java.util.Map;
+
 // 6 kyu
 /*
 The goal of this exercise is to convert a string to a new string
@@ -17,14 +20,26 @@ Notes
 Assertion messages may be unclear about what they display in some languages.
 If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
 */
+
 public class DuplicateEncoder {
     static String encode(String word) {
-        if (word.equals("Prespecialized")) {
-            return ")()())()(()()(";
+        Map<Character, Boolean> map = new HashMap<>();
+        String lowCaseWord = word.toLowerCase();
+
+        for (int i = 0; i < lowCaseWord.length(); i++) {
+            Character ch = lowCaseWord.charAt(i);
+            map.put( ch, map.containsKey( ch));
         }
-        if (word.equals("   ()(   ")) {
-            return "))))())))";
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < lowCaseWord.length(); i++) {
+            Character ch = lowCaseWord.charAt(i);
+            if (map.get(ch)) {
+                sb.append(")");
+            } else {
+                sb.append("(");
+            }
         }
-        return word;
+        return sb.toString();
     }
 }
