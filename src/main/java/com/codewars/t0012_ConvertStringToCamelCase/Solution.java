@@ -25,6 +25,22 @@ Examples
 class Solution{
 
     static String toCamelCase(String s){
-        return "";
+        StringBuilder result = new StringBuilder();
+        boolean toUpperCase = false;
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch == '_' || ch == '-') {
+                toUpperCase = true;
+            } else {
+                if (toUpperCase) {
+                    ch = Character.toUpperCase(ch);
+                    toUpperCase = false;
+                }
+                result.append(ch);
+            }
+        }
+
+        return result.toString();
     }
 }
