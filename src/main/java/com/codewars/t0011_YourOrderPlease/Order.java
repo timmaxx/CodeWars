@@ -18,6 +18,21 @@ Examples
 
 public class Order {
     public static String order(String words) {
-        return "";
+        String[] arrOfWords = words.split(" ");
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 1; i <= arrOfWords.length; i++) {
+            for (String word: arrOfWords) {
+                if (word.contains(Integer.toString(i))) {
+                    result.append(word);
+                    if (i < arrOfWords.length) {
+                        result.append(" ");
+                    }
+                    break;
+                }
+            }
+        }
+
+        return result.toString();
     }
 }
