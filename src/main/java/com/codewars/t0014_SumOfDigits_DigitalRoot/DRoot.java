@@ -28,6 +28,15 @@ Examples
 
 public class DRoot {
     public static int digital_root(int n) {
-        return 0;
+        if (n < 10) {
+            return n;
+        }
+        String strFromInt = Integer.toString(n);
+        int localDRoot = 0;
+        for (int i = 0; i < strFromInt.length(); i++) {
+            char ch = strFromInt.charAt(i);
+            localDRoot += ch - 48;
+        }
+        return digital_root(localDRoot);
     }
 }
