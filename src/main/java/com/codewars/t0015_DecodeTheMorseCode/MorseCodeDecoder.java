@@ -2,9 +2,17 @@ package com.codewars.t0015_DecodeTheMorseCode;
 
 public class MorseCodeDecoder {
     public static String decode(String morseCode) {
-        // your brilliant code here, remember that you can access the preloaded Morse code table through MorseCode.get(code)
-        // return "";
-        // MorseCode.get(".--")
-        return "";
+        StringBuilder result = new StringBuilder();
+        String[] arrOfWords = morseCode.trim().split(" {3}");
+
+        for (String word: arrOfWords) {
+            String[] arrOfLetters = word.split(" ");
+            for (String letter: arrOfLetters) {
+                result.append(MorseCode.get(letter));
+            }
+            result.append(' ');
+        }
+
+        return result.toString().trim();
     }
 }
