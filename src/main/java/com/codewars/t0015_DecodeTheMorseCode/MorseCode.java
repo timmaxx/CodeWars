@@ -15,7 +15,7 @@ public class MorseCode {
             ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", "-----",
             "--..--", ".-.-.-", "..--.."};
 
-    static char get(String morseCode) {
+    public static char get(String morseCode) {
         for (int i = 0; i < morse.length; i++) {
             if (morse[i].equals(morseCode)) {
                 return english[i];
